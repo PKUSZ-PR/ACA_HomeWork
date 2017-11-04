@@ -1,4 +1,5 @@
-
 #include "cache_alg.h"
 
-int f{return 0;}
+int f(){
+    return 0;
+}

@@ -1,6 +1,8 @@
 # depslib dependency file v1.0
-1509774774 source:c:\users\ep\desktop\aca_homework\cache_configuration\main.c
-	"cachetest.h"
+1509791106 source:c:\users\ep\desktop\aca_homework\cache_configuration\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
 
 1509775136 c:\users\ep\desktop\aca_homework\cache_configuration\cachetest.h
 
