@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1509721229 source:c:\users\ep\desktop\aca_homework\sort_algorithm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"my_alg.h"
+
+1509721081 c:\users\ep\desktop\aca_homework\sort_algorithm\my_alg.h
+
+1509721475 source:c:\users\ep\desktop\aca_homework\sort_algorithm\my_alg.c
+	<stdio.h>
+	<stdlib.h>
+	"my_alg.h"
+

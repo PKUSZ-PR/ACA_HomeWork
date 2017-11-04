@@ -24,8 +24,15 @@ int* RandomArray(int num){
     return p;
 }
 
+int test[11] = {82,123,42,16,48,33,22,1,56,56, 56};
+
 int main()
 {
-
+    Link l[10] = {(0, 0)};
+    int tmp[10] = {0};
+    QuickSort(test, 11, l);
+    int i = 0;
+    for(; i < 11; i++)
+        printf("%d ", test[i]);
     return 0;
 }
