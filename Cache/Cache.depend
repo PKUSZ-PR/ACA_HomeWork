@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1509775651 source:c:\users\ep\desktop\aca_homework\cache\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cache_alg.h"
+
+1509775487 c:\users\ep\desktop\aca_homework\cache\cache_alg.h
+

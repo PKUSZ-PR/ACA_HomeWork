@@ -30,7 +30,7 @@ int main()
 {
     Link l[10] = {(0, 0)};
     int tmp[10] = {0};
-    QuickSort(test, 11, l);
+    MergeSort(test, 10, tmp, l);
     int i = 0;
     for(; i < 11; i++)
         printf("%d ", test[i]);

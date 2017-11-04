@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include "cachetest.h"
-
-extern int A[];
-
-
-
-void* CacheMemTest(int loop){
+//extern int A[];
+int f()
+{
+    return 0;
+}
+void CacheMemTest(int loop){
     printf("***********************Start Cache Memory Test**********************\n");
     /* Assume that memory of L3 Cache is less then 8MB */
+    int A[] = {0};
     int maxmem = 1 << 21;
     srand(time(0))
     int i, j, k;
@@ -25,7 +26,7 @@ void* CacheMemTest(int loop){
     printf("***********************Finish Cache Memory Test**********************\n");
 }
 
-void* CacheBlockTest(int loop, int n){
+void CacheBlockTest(int loop, int n){
     printf("***********************Start Cache Block Test**********************\n");
     /* Assume that block size of cache is less than 512B */
     int maxblock = 124;
@@ -50,7 +51,7 @@ void* CacheBlockTest(int loop, int n){
 * This function can test your cache's set association
 *
 */
-void* CacheLineTest(){
+void CacheLineTest(){
     printf("***********************Start Cache Association Test**********************\n");
     /* Assume that block size of cache is less than 512B */
     int i, j, k;

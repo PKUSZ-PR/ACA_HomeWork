@@ -81,9 +81,12 @@ int MergeSort(int *mat, int n, int *tmp , Link *links){
                 sv.x = l2.x;
                 cur_n_links --;
             }
-            links[stop_p] = sl;
+            Link ll;
+            ll.x = sl.x;
+            ll.y = sv.y;
+            links[stop_p] = ll;
             stop_p = (stop_p + 1) % n;
-            Merge(sl.x, sl.y, sv.x, sl.x, mat, tmp);
+            Merge(sl.x, sl.y, sv.x, sv.y, mat, tmp);
         }while((f_p != l_p));
         nlinks = cur_n_links;
         l_p = stop_p;
