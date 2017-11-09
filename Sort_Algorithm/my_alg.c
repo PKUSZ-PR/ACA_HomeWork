@@ -58,8 +58,6 @@ int MergeSort(int *mat, int n, int *tmp , Link *links){
         return 1;
     /* Initialization of Link Array */
     int i;
-    for(i = 0; i < n; i++)
-        links[i].x = links[i].y = i;
     int nlinks = n, link_size = n, f_p = 0, l_p = 0, stop_p = 0;
     while(nlinks - 1){
         int cur_n_links = nlinks;
