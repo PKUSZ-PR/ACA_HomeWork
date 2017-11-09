@@ -26,6 +26,7 @@ int main()
         for(j = 0; j < MAX; j++)
             A[i][j] = rand()% DIV, B[i][j] = rand() % DIV;
     /*Start testing*/
+
     printf("*************************Start MatrixMultiple*************************\n");
     for(i = 0; i < n_num; i++){
         int NN = N[i], nn = n[i];
@@ -36,7 +37,7 @@ int main()
             MatrixMultiple(NN, B, C, A);
         }
         ft = clock() - st;
-        printf("N=%4d, n=%4d, time(ms)=%d", NN, nn, ft);
+        printf("N=%4d, n=%4d, time(ms)=%d\n", NN, nn, ft);
     }
     printf("*************************Finish MatrixMultiple*************************\n\n");
 
@@ -45,12 +46,12 @@ int main()
         int NN = N[i], nn = n[i];
         st = clock();
         for(j = 0; j < nn; j++){
-            MatrixMultipleTmp(NN, A, B, C, tmp);
-            MatrixMultipleTmp(NN, A, B, B, tmp);
-            MatrixMultipleTmp(NN, B, C, A, tmp);
+            MatrixMultipleTmp(NN, A, B, C, TMP);
+            MatrixMultipleTmp(NN, A, B, B, TMP);
+            MatrixMultipleTmp(NN, B, C, A, TMP);
         }
         ft = clock() - st;
-        printf("N=%4d, n=%4d, time(ms)=%d", NN, nn, ft);
+        printf("N=%4d, n=%4d, time(ms)=%d\n", NN, nn, ft);
     }
     printf("*************************Finish MatrixMultipleTmp*************************\n\n");
 
@@ -59,12 +60,12 @@ int main()
         int NN = N[i], nn = n[i];
         st = clock();
         for(j = 0; j < nn; j++){
-            MatrixMultipleBlock(NN, b, A, B, C, tmp);
-            MatrixMultipleBlock(NN, b, A, B, B, tmp);
-            MatrixMultipleBlock(NN, b, B, C, A, tmp);
+            MatrixMultipleBlock(NN, b, A, B, C, TMP);
+            MatrixMultipleBlock(NN, b, A, B, B, TMP);
+            MatrixMultipleBlock(NN, b, B, C, A, TMP);
         }
         ft = clock() - st;
-        printf("N=%4d, n=%4d, time(ms)=%d", NN, nn, ft);
+        printf("N=%4d, n=%4d, time(ms)=%d\n", NN, nn, ft);
     }
     printf("*************************Finish MatrixMultipleBlock*************************\n\n");
 
@@ -73,13 +74,14 @@ int main()
         int NN = N[i], nn = n[i];
         st = clock();
         for(j = 0; j < nn; j++){
-            MatrixMultipleSparse(NN, A, B, C, tmp);
-            MatrixMultipleSparse(NN, A, B, B, tmp);
-            MatrixMultipleSparse(NN, B, C, A, tmp);
+            MatrixMultipleSparse(NN, A, B, C, TMP);
+            MatrixMultipleSparse(NN, A, B, B, TMP);
+            MatrixMultipleSparse(NN, B, C, A, TMP);
         }
         ft = clock() - st;
-        printf("N=%4d, n=%4d, time(ms)=%d", NN, nn, ft);
+        printf("N=%4d, n=%4d, time(ms)=%d\n", NN, nn, ft);
     }
     printf("*************************Finish MatrixMultipleSparse*************************\n\n");
+
     return 0;
 }
