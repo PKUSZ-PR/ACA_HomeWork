@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1509723909 source:c:\users\ep\desktop\aca_homework\matrix_trick\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"matrix_alg.h"
+
+1509771831 c:\users\ep\desktop\aca_homework\matrix_trick\matrix_alg.h
+
+1509723347 source:c:\users\ep\desktop\aca_homework\matrix_trick\matrix_alg.c
+	<stdio.h>
+	<stdlib.h>
+	"matrix_alg.h"
+
