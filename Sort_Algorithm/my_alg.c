@@ -58,7 +58,7 @@ int MergeSort(int *mat, int n, int *tmp , Link *links){
         return 1;
     /* Initialization of Link Array */
     int i;
-    int nlinks = n, link_size = n, f_p = 0, l_p = 0, stop_p = 0;
+    int nlinks = n, f_p = 0, l_p = 0, stop_p = 0;
     while(nlinks - 1){
         int cur_n_links = nlinks;
         do{
@@ -67,23 +67,21 @@ int MergeSort(int *mat, int n, int *tmp , Link *links){
             Link l1 = links[f_p];
             sl.x = l1.x;
             sl.y = l1.y;
-            f_p = (f_p + 1) % n;
+            f_p = (f_p + 1) & (n - 1);
             if(f_p == l_p){
                 sv.x = l1.x;
                 sv.y = l1.y;
             }
             else{
                 Link l2 = links[f_p];
-                f_p = (f_p + 1) % n;
+                f_p = (f_p + 1)  & (n - 1);
                 sv.y = l2.y;
                 sv.x = l2.x;
                 cur_n_links --;
             }
-            Link ll;
-            ll.x = sl.x;
-            ll.y = sv.y;
-            links[stop_p] = ll;
-            stop_p = (stop_p + 1) % n;
+            links[stop_p].x = sl.x;
+            links[stop_p].y = sv.y;
+            stop_p = (stop_p + 1)  & (n - 1);
             Merge(sl.x, sl.y, sv.x, sv.y, mat, tmp);
         }while((f_p != l_p));
         nlinks = cur_n_links;
@@ -100,15 +98,13 @@ int QuickSort(int *mat, int n, Link *links){
     if(mat == NULL || n < 1)
         return 1;
     /* Initialization */
-    Link l;
-    l.x = 0;
-    l.y = n - 1;
     int link_size = 1, f_p = 0;
-    int l_p = (f_p + 1) % n;
-    links[0] = l;
+    int l_p = (f_p + 1) & (n - 1);
+    links[0].x = 0;
+    links[0].y = n - 1;
     while(link_size){
         Link l = links[f_p];
-        f_p = (f_p + 1) % n;
+        f_p = (f_p + 1) & (n - 1);
         link_size --;
         if(l.x >= l.y)
             continue;
@@ -123,15 +119,11 @@ int QuickSort(int *mat, int n, Link *links){
             mat[j] = mat[i];
         }
         mat[i] = pval;
-        Link l1, l2;
-        l1.x = left, l1.y = i - 1;
-        l2.x = i + 1, l2.y = right;
-        links[l_p] = l1;
-        l_p = (l_p + 1) % n;
-        link_size ++;
-        links[l_p] = l2;
-        l_p = (l_p + 1) % n;
-        link_size ++;
+        links[l_p].x = left, links[l_p].y = i - 1;
+        l_p = (l_p + 1) & (n - 1);
+        links[l_p].x = i + 1, links[l_p].y = right;
+        l_p = (l_p + 1) & (n - 1);
+        link_size += 2;
     }
     return 0;
 }
