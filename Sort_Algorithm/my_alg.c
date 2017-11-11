@@ -102,11 +102,15 @@ int QuickSort(int *mat, int n, Link *links){
     int l_p = (f_p + 1) & (n - 1);
     links[0].x = 0;
     links[0].y = n - 1;
-    while(link_size){
+    int n_size = n;
+    while(n_size != 0){
         Link l = links[f_p];
         f_p = (f_p + 1) & (n - 1);
         link_size --;
-        if(l.x >= l.y)
+        if(l.x == l.y){
+            n_size --;
+            continue;
+        }else if(l.x > l.y)
             continue;
         int left = l.x, right = l.y;
         int i = left, j = right, pval = mat[left];
@@ -119,6 +123,7 @@ int QuickSort(int *mat, int n, Link *links){
             mat[j] = mat[i];
         }
         mat[i] = pval;
+        n_size --;
         links[l_p].x = left, links[l_p].y = i - 1;
         l_p = (l_p + 1) & (n - 1);
         links[l_p].x = i + 1, links[l_p].y = right;
