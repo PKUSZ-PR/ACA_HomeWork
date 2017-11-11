@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "my_alg.h"
+
+/**
+*
+*/
+
+
 /**
 * This this the method runs insert sort algorithm
 * mat is pointer of array that to be sorted
@@ -89,15 +95,12 @@ int MergeSort(int *mat, int n, int *tmp , Link *links){
     }
     return 0;
 }
-/**
-* This is the method that runs quick sort
-* mat is the array that to be sorted
-* n is the size of the array
-*/
+
+/*
 int QuickSort(int *mat, int n, Link *links){
     if(mat == NULL || n < 1)
         return 1;
-    /* Initialization */
+    ///Initialization
     int link_size = 1, f_p = 0;
     int l_p = (f_p + 1) & (n - 1);
     links[0].x = 0;
@@ -132,3 +135,40 @@ int QuickSort(int *mat, int n, Link *links){
     }
     return 0;
 }
+*/
+/*
+int QuickSort(int *mat, int n){
+    if(mat == NULL || n < 1)
+        return 1;
+    //Initialization
+    q.fp = 0, q.lp = 1;
+    q.x[0], q.y[0] = n -1;
+    int n_size = n;
+    int x, y;
+    while(n_size != 0){
+        pop(&x, &y, n);
+        if((x) == (y)){
+            n_size --;
+            continue;
+        }else if((x) > (y))
+            continue;
+        int left = (x), right = (y);
+        int i = left, j = right, pval = mat[left];
+        while(i!=j){
+            while(i < j && mat[j] >= pval)
+                j--;
+            mat[i] = mat[j];
+            while(i < j && mat[i] <= pval)
+                i++;
+            mat[j] = mat[i];
+        }
+        mat[i] = pval;
+        n_size --;
+        if(left <= i-1)
+            push(left, i-1, n);
+        if(right >= i+1)
+            push(i+1, right, n);
+    }
+    return 0;
+}
+*/
