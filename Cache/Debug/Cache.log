@@ -1,0 +1,5 @@
+﻿  main.c
+main.c(7): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+main.c(12): error C2082: 形参“array_size”的重定义
+  cache_alg.c
+  正在生成代码...

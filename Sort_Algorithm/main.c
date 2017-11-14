@@ -38,7 +38,7 @@ int main()
     memset(tmp, 0,sizeof(int)* MAX_SIZE);
     memset(p, 0, sizeof(int) * MAX_SIZE);
     Link *links = (Link*)malloc(sizeof(Link) * MAX_SIZE);
-    int*p = (int*)malloc(sizeof(int) * MAX_SIZE);
+    //int*p = (int*)malloc(sizeof(int) * MAX_SIZE);
     for(v = 0; v < MAX_SIZE; v++)
         links[v].x = links[v].y = v;
 
