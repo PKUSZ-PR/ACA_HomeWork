@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include <stdlib.h>
-#include <time.h>
+#include <sys/time.h>
 
 int timediff(clock_t t1, clock_t t2) {
     int elapsed;
