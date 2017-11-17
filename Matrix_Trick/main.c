@@ -19,7 +19,7 @@ int main()
 {
     /*Initialization*/
     int i = 0, j = 0;
-    int b = 16;
+    int b = 8;
     clock_t st, ft;
     srand(time(0));
     for(i = 0; i < MAX; i++)
