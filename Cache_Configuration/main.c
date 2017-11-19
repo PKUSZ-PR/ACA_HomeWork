@@ -41,13 +41,14 @@ void CacheMemTest(int loop){
 void CacheMissPenalty(int loop, int n){
     printf("***********************Start Cache MissPenalty Test**********************\n");
     /* Assume that block size is 64B, then a line of cache is 8MB */
-    int step = 8*MB/64/B;
+    ///int step = 8*MB/64;
+    int step = 8*MB/64;
     int i, j = 0;
     volatile int v;
      clock_t s_t, f_t;
     s_t = clock();
     for(i = 0; i < loop; i++){
-        v = A[j];
+        v = A[j]*3;
         j = (j + step) & (n - 1);
     }
     printf("---------Loop quantity is %d---------\n", loop);
@@ -55,13 +56,14 @@ void CacheMissPenalty(int loop, int n){
     printf("---------Miss Penalty:%7dms ------------\n", (f_t-s_t) );
     s_t = clock();
     for(i = 0; i < loop; i++){
-        v = A[j];
-        j = (j + 1) & (15);
+        //v = A[j];
+        v = A[0]*3;
     }
     f_t = clock();
     printf("---------Not Miss Penalty:%7dms ------------\n", (f_t-s_t) );
     printf("***********************Finish Cache MissPenalty Test**********************\n");
 }
+
 /**
 *
 * This function can test your cache's block size

@@ -7,6 +7,7 @@ typedef struct {
     int x;
     int y;
 }Link;
+//The queue the store the information
 typedef struct{
     int fp;
     int lp;
@@ -14,11 +15,13 @@ typedef struct{
     int x[M];
 }Q;
 Q q;
+//push element into queue
 void push(int x, int y, int n){
     q.x[q.lp] = x;
     q.y[q.lp] = y;
     q.lp = (q.lp + 1) & (n - 1);
 }
+//pop element out of queue
 void pop(int*x , int*y, int n){
     (*x) = q.x[q.fp];
     (*y) = q.y[q.fp];

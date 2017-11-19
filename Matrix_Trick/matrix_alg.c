@@ -12,7 +12,8 @@ typedef struct
 	int i, j;
 	int e;
 }Triple;
-
+//For sparse matrix multiple
+//rpos is the length of n rows without 0 elements
 typedef struct
 {
 	Triple data[MAXN];
@@ -42,12 +43,12 @@ Matrix createMatrix(int (*a)[MAX], int n)
 				x.tu++;
 			}
 		}
-		
+
 		if(!flag){
-			x.rpos[i] = x.tu;	
+			x.rpos[i] = x.tu;
 		}
 	}
-	
+
 	return x;
 }
 
@@ -129,7 +130,6 @@ int MatrixMultipleBlock(int n, int B, int (*mat1)[MAX], int (*mat2)[MAX], int (*
 * The time complexity is O(n*n*n)
 * n columns of matrix
 * parameter of mat1, mat2, rs and tmp is a N * N matrix
-* B block of matrix
 */
 int MatrixMultipleSparse(int n, int (*mat1)[MAX], int (*mat2)[MAX], int (*rs)[MAX], int (*tmp)[MAX]){
     if(n < 1)
@@ -138,7 +138,7 @@ int MatrixMultipleSparse(int n, int (*mat1)[MAX], int (*mat2)[MAX], int (*rs)[MA
 	int ctemp[n], arrow, p, q, s;
 	Matrix A = createMatrix(mat1, n);
     Matrix B = createMatrix(mat2, n);
-	
+
 	for(arrow = 0; arrow < n; arrow++)
 	{
 		int tp;
@@ -167,8 +167,8 @@ int MatrixMultipleSparse(int n, int (*mat1)[MAX], int (*mat2)[MAX], int (*rs)[MA
 				ctemp[ccol] += A.data[p].e*B.data[q].e;
 			}
 		}
-		
-		
+
+
 		for(s = 0; s < n; s++){
 			if(ctemp[s]){
 				rs[arrow][s] = ctemp[s];

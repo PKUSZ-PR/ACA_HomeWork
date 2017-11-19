@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include "my_alg.h"
 
-/**
-*
-*/
 
 
 /**
@@ -56,8 +53,8 @@ int Merge(int firstx, int lastx, int firsty, int lasty,  int *mat, int *tmp){
     return 0;
 }
 /**
-*
-*
+* Merge Sort Algorithm implementation without recursion
+* tmp and links is the matrix to store infomation
 */
 int MergeSort(int *mat, int n, int *tmp , Link *links){
     if(mat == NULL || n < 1)
